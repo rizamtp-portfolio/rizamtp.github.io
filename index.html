@@ -1,376 +1,398 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rizam T P | Logistics Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rizam T P | Logistics Portfolio</title>
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:'Segoe UI',sans-serif;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
 
-        html{
-            scroll-behavior:smooth;
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        body{
-            background:#f4f7fa;
-            color:#333;
-            line-height:1.6;
-        }
+body{
+    background:#f5f7fa;
+    color:#333;
+    line-height:1.7;
+}
 
-        header{
-            position:fixed;
-            width:100%;
-            top:0;
-            z-index:1000;
-            background:#0f172a;
-            padding:15px 8%;
-        }
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:#0f172a;
+    padding:18px 8%;
+    z-index:1000;
+}
 
-        nav{
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-        }
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
 
-        .logo{
-            color:#fff;
-            font-size:24px;
-            font-weight:700;
-        }
+.logo{
+    color:white;
+    font-size:24px;
+    font-weight:700;
+}
 
-        nav ul{
-            display:flex;
-            list-style:none;
-        }
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
 
-        nav ul li{
-            margin-left:25px;
-        }
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    transition:.3s;
+}
 
-        nav ul li a{
-            color:white;
-            text-decoration:none;
-            font-weight:500;
-        }
+nav ul li a:hover{
+    color:#38bdf8;
+}
 
-        .hero{
-            min-height:100vh;
-            display:flex;
-            align-items:center;
-            justify-content:space-between;
-            padding:100px 8%;
-            background:
-            linear-gradient(rgba(0,0,0,0.65),
-            rgba(0,0,0,0.65)),
-            url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1920&auto=format&fit=crop');
-            background-size:cover;
-            background-position:center;
-            color:white;
-        }
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:120px 8%;
 
-        .hero-content{
-            max-width:650px;
-        }
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.75),
+        rgba(0,0,0,0.75)
+    ),
+    url("logistics-bg.jpg");
 
-        .hero h1{
-            font-size:58px;
-            margin-bottom:15px;
-        }
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
 
-        .hero h2{
-            color:#38bdf8;
-            margin-bottom:20px;
-            font-size:28px;
-        }
+    color:white;
+}
 
-        .hero p{
-            font-size:18px;
-            margin-bottom:30px;
-        }
+.hero-content{
+    max-width:900px;
+}
 
-        .hero-image img{
-            width:320px;
-            height:320px;
-            border-radius:50%;
-            object-fit:cover;
-            border:5px solid #38bdf8;
-            box-shadow:0 0 25px rgba(56,189,248,0.4);
-        }
+.hero h1{
+    font-size:70px;
+    margin-bottom:10px;
+    letter-spacing:2px;
+}
 
-        .btn{
-            display:inline-block;
-            background:#38bdf8;
-            color:white;
-            padding:12px 25px;
-            text-decoration:none;
-            border-radius:30px;
-            margin-right:10px;
-            margin-top:10px;
-            font-weight:600;
-        }
+.hero h2{
+    font-size:28px;
+    color:#38bdf8;
+    margin-bottom:25px;
+}
 
-        section{
-            padding:80px 8%;
-        }
+.hero p{
+    font-size:18px;
+    margin-bottom:35px;
+    color:#eaeaea;
+}
 
-        .section-title{
-            text-align:center;
-            margin-bottom:40px;
-            font-size:36px;
-            color:#0f172a;
-        }
+.btn{
+    display:inline-block;
+    padding:14px 30px;
+    margin:10px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
 
-        .about,
-        .education,
-        .contact{
-            background:white;
-        }
+.btn-primary{
+    background:#38bdf8;
+    color:white;
+}
 
-        .about p{
-            max-width:900px;
-            margin:auto;
-            text-align:center;
-            font-size:18px;
-        }
+.btn-primary:hover{
+    background:#0284c7;
+}
 
-        .skills-grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-            gap:20px;
-        }
+.btn-outline{
+    border:2px solid #38bdf8;
+    color:white;
+}
 
-        .skill-box{
-            background:white;
-            padding:20px;
-            border-radius:12px;
-            text-align:center;
-            box-shadow:0 4px 15px rgba(0,0,0,0.08);
-            font-weight:600;
-        }
+.btn-outline:hover{
+    background:#38bdf8;
+}
 
-        .card{
-            background:white;
-            padding:25px;
-            margin-bottom:20px;
-            border-radius:12px;
-            box-shadow:0 4px 15px rgba(0,0,0,0.08);
-        }
+section{
+    padding:90px 8%;
+}
 
-        .card h3{
-            color:#0f172a;
-            margin-bottom:10px;
-        }
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+    color:#0f172a;
+    font-size:36px;
+}
 
-        .contact-info{
-            text-align:center;
-            font-size:18px;
-        }
+.about{
+    background:white;
+}
 
-        .contact-info a{
-            color:#0ea5e9;
-            text-decoration:none;
-        }
+.about p{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    font-size:18px;
+}
 
-        footer{
-            text-align:center;
-            background:#0f172a;
-            color:white;
-            padding:20px;
-        }
+.skills{
+    background:#eef4f8;
+}
 
-        @media(max-width:900px){
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
 
-            .hero{
-                flex-direction:column-reverse;
-                text-align:center;
-                gap:40px;
-            }
+.skill-card{
+    background:white;
+    padding:20px;
+    text-align:center;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    font-weight:600;
+}
 
-            .hero h1{
-                font-size:42px;
-            }
+.education{
+    background:white;
+}
 
-            .hero-image img{
-                width:250px;
-                height:250px;
-            }
-        }
-    </style>
+.card{
+    background:#f8fafc;
+    padding:25px;
+    border-radius:12px;
+    margin-bottom:20px;
+    box-shadow:0 4px 15px rgba(0,0,0,.06);
+}
+
+.card h3{
+    color:#0f172a;
+    margin-bottom:10px;
+}
+
+.contact{
+    background:#eef4f8;
+    padding-bottom:120px;
+}
+
+.contact-info{
+    text-align:center;
+    font-size:20px;
+}
+
+.contact-info p{
+    margin-bottom:18px;
+}
+
+.contact-info a{
+    color:#0284c7;
+    text-decoration:none;
+}
+
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+@media(max-width:768px){
+
+    header{
+        padding:15px 5%;
+    }
+
+    nav ul{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero h2{
+        font-size:21px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .section-title{
+        font-size:28px;
+    }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <nav>
-        <div class="logo">Rizam T P</div>
+<nav>
 
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+<div class="logo">Rizam T P</div>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
 </header>
 
 <section class="hero">
 
-    <div class="hero-content">
+<div class="hero-content">
 
-        <h1>RIZAM T P</h1>
+<h1>RIZAM T P</h1>
 
-        <h2>Logistics Documentation | Logistics Coordination | Supply Chain Support</h2>
+<h2>
+Logistics Documentation | Logistics Coordination | Supply Chain Support
+</h2>
 
-        <p>
-            BBA graduate specializing in Aviation and Logistics with
-            academic knowledge of logistics documentation, supply chain
-            management, inventory control, and transportation processes.
-            Skilled in MS Office, MS Excel, data entry, and business
-            documentation. Multilingual professional (English,
-            Malayalam, Hindi, Tamil) seeking a GCC-based role in
-            logistics documentation, logistics coordination,
-            or supply chain support.
-        </p>
+<p>
+BBA graduate specializing in Aviation and Logistics with academic knowledge of logistics documentation, supply chain management, inventory control, and transportation processes. Skilled in MS Office, MS Excel, data entry, and business documentation. Multilingual professional (English, Malayalam, Hindi, Tamil) seeking a GCC-based role in logistics documentation, logistics coordination, or supply chain support.
+</p>
 
-        <a href="Rizam_Logistics_CV.pdf" class="btn">
-            Download CV
-        </a>
+<a href="Rizam_Logistics_CV.pdf" download class="btn btn-primary">
+Download CV
+</a>
 
-        <a href="mailto:rizamtp9372@gmail.com" class="btn">
-            Email Me
-        </a>
+<a href="#contact" class="btn btn-outline">
+Contact Me
+</a>
 
-    </div>
-
-    <div class="hero-image">
-        <img src="rizam.jpg" alt="Rizam T P">
-    </div>
+</div>
 
 </section>
 
 <section id="about" class="about">
 
-    <h2 class="section-title">About Me</h2>
+<h2 class="section-title">About Me</h2>
 
-    <p>
-        I am a BBA graduate specializing in Aviation and Logistics
-        with a strong interest in logistics documentation,
-        supply chain operations, inventory control, and
-        transportation processes. I am proficient in MS Office,
-        MS Excel, record keeping, and business documentation.
-        My goal is to build a successful career in logistics
-        and supply chain operations across the GCC region.
-    </p>
+<p>
+I am a BBA graduate specializing in Aviation and Logistics with a strong interest in logistics documentation, inventory management, supply chain support, operational coordination, and business documentation. I am seeking an opportunity to begin my professional career in the UAE logistics industry and contribute through attention to detail, strong organizational abilities, and a willingness to learn.
+</p>
 
 </section>
 
-<section id="skills">
+<section id="skills" class="skills">
 
-    <h2 class="section-title">Technical Skills</h2>
+<h2 class="section-title">Technical Skills</h2>
 
-    <div class="skills-grid">
+<div class="skills-grid">
 
-        <div class="skill-box">Logistics Documentation</div>
-        <div class="skill-box">Shipping Documentation</div>
-        <div class="skill-box">Inventory Record Management</div>
-        <div class="skill-box">Logistics Coordination</div>
-        <div class="skill-box">Supply Chain Support</div>
-        <div class="skill-box">Shipment Tracking</div>
-        <div class="skill-box">Documentation Control</div>
-        <div class="skill-box">MS Excel</div>
-        <div class="skill-box">MS Office Suite</div>
-        <div class="skill-box">Data Entry</div>
-        <div class="skill-box">Report Preparation</div>
-        <div class="skill-box">Business Documentation</div>
+<div class="skill-card">Logistics Documentation</div>
+<div class="skill-card">Shipping Documentation</div>
+<div class="skill-card">Inventory Record Management</div>
+<div class="skill-card">Data Entry</div>
+<div class="skill-card">MS Excel</div>
+<div class="skill-card">MS Office Suite</div>
+<div class="skill-card">Documentation Control</div>
+<div class="skill-card">Report Preparation</div>
+<div class="skill-card">Logistics Coordination</div>
+<div class="skill-card">Supply Chain Support</div>
+<div class="skill-card">Business Documentation</div>
+<div class="skill-card">Administrative Support</div>
 
-    </div>
+</div>
 
 </section>
 
 <section id="education" class="education">
 
-    <h2 class="section-title">Education & Certifications</h2>
+<h2 class="section-title">Education & Certifications</h2>
 
-    <div class="card">
-        <h3>Bachelor of Business Administration (BBA)</h3>
-        <p>
-            Specialization: Aviation and Logistics
-            <br>
-            Yenepoya Institute of Arts and Science
-            <br>
-            Expected Graduation: 2026
-        </p>
-    </div>
+<div class="card">
+<h3>Bachelor of Business Administration (BBA)</h3>
+<p>
+Specialization: Aviation and Logistics<br>
+Yenepoya Institute of Arts and Science (Yenepoya Deemed University), Mangalore<br>
+Expected Graduation: 2026
+</p>
+</div>
 
-    <div class="card">
-        <h3>Certifications</h3>
-        <p>
-            Airport Passenger Ground Service – WingsWay Training Institute, Dubai
-            <br><br>
-            Supply Chain Disruptions & Smart Solution For 2026
-            <br><br>
-            SHODHANA Pre-Placement Workshop
-        </p>
-    </div>
+<div class="card">
+<h3>Professional Training & Certifications</h3>
+<p>
+Airport Passenger Ground Service – WingsWay Training Institute, Dubai<br><br>
+
+Supply Chain Disruptions & Smart Solution For 2026 – WingsWay Training Institute, Dubai<br><br>
+
+SHODHANA Pre-Placement Workshop
+</p>
+</div>
 
 </section>
 
 <section id="contact" class="contact">
 
-    <h2 class="section-title">Contact</h2>
+<h2 class="section-title">Contact</h2>
 
-    <div class="contact-info">
+<div class="contact-info">
 
-        <p>
-            📞
-            <a href="tel:+971523740357">
-                +971 523740357
-            </a>
-        </p>
+<p>
+📞
+<a href="tel:+971523740357">
++971 523740357
+</a>
+</p>
 
-        <br>
+<p>
+📧
+<a href="mailto:rizamtp9372@gmail.com">
+rizamtp9372@gmail.com
+</a>
+</p>
 
-        <p>
-            ✉️
-            <a href="mailto:rizamtp9372@gmail.com">
-                rizamtp9372@gmail.com
-            </a>
-        </p>
+<p>
+🌐
+<a href="https://rizamtp-portfolio.github.io/aviation-rizam/" target="_blank">
+Portfolio Website
+</a>
+</p>
 
-        <br>
+<p>
+💼
+<a href="https://www.linkedin.com/in/rizam-t-p-0b1098292" target="_blank">
+LinkedIn Profile
+</a>
+</p>
 
-        <p>
-            🌐
-            <a href="https://rizamtp-portfolio.github.io/aviation-rizam/" target="_blank">
-                Portfolio
-            </a>
-        </p>
+<p>
+📍 Dubai, UAE
+</p>
 
-        <br>
-
-        <p>
-            💼
-            <a href="https://www.linkedin.com/in/rizam-t-p-0b1098292" target="_blank">
-                LinkedIn
-            </a>
-        </p>
-
-        <br>
-
-        <p>📍 Dubai, UAE</p>
-
-    </div>
+</div>
 
 </section>
 
 <footer>
-    © 2026 Rizam T P | Logistics Portfolio
+© 2026 Rizam T P | Logistics Documentation Portfolio
 </footer>
 
 </body>
