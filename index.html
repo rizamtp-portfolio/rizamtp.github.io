@@ -1,248 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rizam T P | Aviation & Logistics</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rizam T P | Logistics Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Segoe UI',sans-serif;
+        }
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
+        html{
+            scroll-behavior:smooth;
+        }
 
-body{
-    background:#f7f9fc;
-    color:#333;
-}
+        body{
+            background:#f4f7fa;
+            color:#333;
+            line-height:1.6;
+        }
 
-header{
-    background:linear-gradient(135deg,#003366,#0059b3);
-    color:white;
-    text-align:center;
-    padding:80px 20px;
-}
+        header{
+            position:fixed;
+            width:100%;
+            top:0;
+            z-index:1000;
+            background:#0f172a;
+            padding:15px 8%;
+        }
 
-header h1{
-    font-size:3rem;
-}
+        nav{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
 
-header p{
-    margin-top:15px;
-    font-size:1.2rem;
-}
+        .logo{
+            color:#fff;
+            font-size:24px;
+            font-weight:700;
+        }
 
-.btn{
-    display:inline-block;
-    margin:10px;
-    padding:12px 25px;
-    background:white;
-    color:#003366;
-    text-decoration:none;
-    border-radius:30px;
-    font-weight:600;
-    transition:.3s;
-}
+        nav ul{
+            display:flex;
+            list-style:none;
+        }
 
-.btn:hover{
-    transform:translateY(-3px);
-}
+        nav ul li{
+            margin-left:25px;
+        }
 
-section{
-    max-width:1100px;
-    margin:auto;
-    padding:70px 20px;
-}
+        nav ul li a{
+            color:white;
+            text-decoration:none;
+            font-weight:500;
+        }
 
-.section-title{
-    text-align:center;
-    margin-bottom:40px;
-    color:#003366;
-    font-size:2rem;
-}
+        .hero{
+            min-height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            padding:100px 8%;
+            background:
+            linear-gradient(rgba(0,0,0,0.65),
+            rgba(0,0,0,0.65)),
+            url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1920&auto=format&fit=crop');
+            background-size:cover;
+            background-position:center;
+            color:white;
+        }
 
-.about{
-    text-align:center;
-    line-height:1.8;
-}
+        .hero-content{
+            max-width:650px;
+        }
 
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:20px;
-}
+        .hero h1{
+            font-size:58px;
+            margin-bottom:15px;
+        }
 
-.card{
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
-}
+        .hero h2{
+            color:#38bdf8;
+            margin-bottom:20px;
+            font-size:28px;
+        }
 
-.card h3{
-    color:#003366;
-    margin-bottom:10px;
-}
+        .hero p{
+            font-size:18px;
+            margin-bottom:30px;
+        }
 
-.skills{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-    justify-content:center;
-}
+        .hero-image img{
+            width:320px;
+            height:320px;
+            border-radius:50%;
+            object-fit:cover;
+            border:5px solid #38bdf8;
+            box-shadow:0 0 25px rgba(56,189,248,0.4);
+        }
 
-.skill{
-    background:#003366;
-    color:white;
-    padding:10px 18px;
-    border-radius:25px;
-}
+        .btn{
+            display:inline-block;
+            background:#38bdf8;
+            color:white;
+            padding:12px 25px;
+            text-decoration:none;
+            border-radius:30px;
+            margin-right:10px;
+            margin-top:10px;
+            font-weight:600;
+        }
 
-.contact{
-    text-align:center;
-}
+        section{
+            padding:80px 8%;
+        }
 
-.contact a{
-    color:#0059b3;
-    text-decoration:none;
-    font-weight:600;
-}
+        .section-title{
+            text-align:center;
+            margin-bottom:40px;
+            font-size:36px;
+            color:#0f172a;
+        }
 
-footer{
-    background:#002244;
-    color:white;
-    text-align:center;
-    padding:20px;
-}
-</style>
+        .about,
+        .education,
+        .contact{
+            background:white;
+        }
+
+        .about p{
+            max-width:900px;
+            margin:auto;
+            text-align:center;
+            font-size:18px;
+        }
+
+        .skills-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:20px;
+        }
+
+        .skill-box{
+            background:white;
+            padding:20px;
+            border-radius:12px;
+            text-align:center;
+            box-shadow:0 4px 15px rgba(0,0,0,0.08);
+            font-weight:600;
+        }
+
+        .card{
+            background:white;
+            padding:25px;
+            margin-bottom:20px;
+            border-radius:12px;
+            box-shadow:0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .card h3{
+            color:#0f172a;
+            margin-bottom:10px;
+        }
+
+        .contact-info{
+            text-align:center;
+            font-size:18px;
+        }
+
+        .contact-info a{
+            color:#0ea5e9;
+            text-decoration:none;
+        }
+
+        footer{
+            text-align:center;
+            background:#0f172a;
+            color:white;
+            padding:20px;
+        }
+
+        @media(max-width:900px){
+
+            .hero{
+                flex-direction:column-reverse;
+                text-align:center;
+                gap:40px;
+            }
+
+            .hero h1{
+                font-size:42px;
+            }
+
+            .hero-image img{
+                width:250px;
+                height:250px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
 <header>
-    <h1>Rizam T P</h1>
-    <p>Logistics Operations | Supply Chain Support | Cargo & Warehouse Operations</p>
+    <nav>
+        <div class="logo">Rizam T P</div>
 
-    <a href="Rizam_T_P_ATS_CV.pdf.pdf" class="btn" download>
-       Download My Resume
-    </a>
-
-
-    <a href="https://www.linkedin.com/in/rizam-t-p-0b1098292/"
-       target="_blank"
-       class="btn">
-       LinkedIn Profile
-    </a>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 </header>
 
-<section>
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>RIZAM T P</h1>
+
+        <h2>Logistics Documentation | Logistics Coordination | Supply Chain Support</h2>
+
+        <p>
+            BBA graduate specializing in Aviation and Logistics with
+            academic knowledge of logistics documentation, supply chain
+            management, inventory control, and transportation processes.
+            Skilled in MS Office, MS Excel, data entry, and business
+            documentation. Multilingual professional (English,
+            Malayalam, Hindi, Tamil) seeking a GCC-based role in
+            logistics documentation, logistics coordination,
+            or supply chain support.
+        </p>
+
+        <a href="Rizam_Logistics_CV.pdf" class="btn">
+            Download CV
+        </a>
+
+        <a href="mailto:rizamtp9372@gmail.com" class="btn">
+            Email Me
+        </a>
+
+    </div>
+
+    <div class="hero-image">
+        <img src="rizam.jpg" alt="Rizam T P">
+    </div>
+
+</section>
+
+<section id="about" class="about">
+
     <h2 class="section-title">About Me</h2>
 
-    <div class="about">
+    <p>
+        I am a BBA graduate specializing in Aviation and Logistics
+        with a strong interest in logistics documentation,
+        supply chain operations, inventory control, and
+        transportation processes. I am proficient in MS Office,
+        MS Excel, record keeping, and business documentation.
+        My goal is to build a successful career in logistics
+        and supply chain operations across the GCC region.
+    </p>
+
+</section>
+
+<section id="skills">
+
+    <h2 class="section-title">Technical Skills</h2>
+
+    <div class="skills-grid">
+
+        <div class="skill-box">Logistics Documentation</div>
+        <div class="skill-box">Shipping Documentation</div>
+        <div class="skill-box">Inventory Record Management</div>
+        <div class="skill-box">Logistics Coordination</div>
+        <div class="skill-box">Supply Chain Support</div>
+        <div class="skill-box">Shipment Tracking</div>
+        <div class="skill-box">Documentation Control</div>
+        <div class="skill-box">MS Excel</div>
+        <div class="skill-box">MS Office Suite</div>
+        <div class="skill-box">Data Entry</div>
+        <div class="skill-box">Report Preparation</div>
+        <div class="skill-box">Business Documentation</div>
+
+    </div>
+
+</section>
+
+<section id="education" class="education">
+
+    <h2 class="section-title">Education & Certifications</h2>
+
+    <div class="card">
+        <h3>Bachelor of Business Administration (BBA)</h3>
         <p>
-            BBA Aviation & Logistics graduate currently based in the UAE.
-            Passionate about logistics operations, cargo handling,
-            warehouse management, airport services, and supply chain support.
-            Seeking opportunities to contribute to operational excellence
-            within aviation and logistics organizations.
+            Specialization: Aviation and Logistics
+            <br>
+            Yenepoya Institute of Arts and Science
+            <br>
+            Expected Graduation: 2026
         </p>
     </div>
-</section>
 
-<section>
-    <h2 class="section-title">Areas of Expertise</h2>
-
-    <div class="skills">
-        <div class="skill">Logistics Operations</div>
-        <div class="skill">Warehouse Operations</div>
-        <div class="skill">Inventory Control</div>
-        <div class="skill">Cargo Operations</div>
-        <div class="skill">Freight Documentation</div>
-        <div class="skill">Shipment Processing</div>
-        <div class="skill">Transportation Coordination</div>
-        <div class="skill">Supply Chain Support</div>
-        <div class="skill">Microsoft Excel</div>
-        <div class="skill">Reporting</div>
-        <div class="skill">Customer Service</div>
+    <div class="card">
+        <h3>Certifications</h3>
+        <p>
+            Airport Passenger Ground Service – WingsWay Training Institute, Dubai
+            <br><br>
+            Supply Chain Disruptions & Smart Solution For 2026
+            <br><br>
+            SHODHANA Pre-Placement Workshop
+        </p>
     </div>
+
 </section>
 
-<section>
-    <h2 class="section-title">Education & Training</h2>
+<section id="contact" class="contact">
 
-    <div class="cards">
-
-        <div class="card">
-            <h3>BBA Aviation & Logistics</h3>
-            <p>
-                Yenepoya University<br>
-                2023 - 2026
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Industry Training</h3>
-            <p>
-                Wingsway Training Institute, Dubai<br>
-                Supply Chain Disruptions & Smart Solutions
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Certification</h3>
-            <p>
-                Digitalisation in Aeronautics<br>
-                Technical University of Munich
-            </p>
-        </div>
-
-    </div>
-</section>
-
-<section>
-    <h2 class="section-title">Academic Projects</h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <h3>Supply Chain Analysis</h3>
-            <p>
-                Analyzed logistics workflows, inventory processes,
-                and operational efficiency opportunities.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Airport Operations Study</h3>
-            <p>
-                Evaluated airport service processes,
-                cargo movement, and passenger handling workflows.
-            </p>
-        </div>
-
-    </div>
-</section>
-
-<section>
     <h2 class="section-title">Contact</h2>
 
-    <div class="contact">
-
-        <p><strong>Location:</strong> Dubai, UAE</p>
-        <br>
-
-        <p>
-            📧
-            <a href="mailto:rizamtp9372@gmail.com">
-                rizamtp9372@gmail.com
-            </a>
-        </p>
-
-        <br>
+    <div class="contact-info">
 
         <p>
             📞
@@ -254,18 +337,40 @@ footer{
         <br>
 
         <p>
-            🔗
-            <a href="https://www.linkedin.com/in/rizam-t-p-0b1098292/"
-               target="_blank">
-               LinkedIn Profile
+            ✉️
+            <a href="mailto:rizamtp9372@gmail.com">
+                rizamtp9372@gmail.com
             </a>
         </p>
 
+        <br>
+
+        <p>
+            🌐
+            <a href="https://rizamtp-portfolio.github.io/aviation-rizam/" target="_blank">
+                Portfolio
+            </a>
+        </p>
+
+        <br>
+
+        <p>
+            💼
+            <a href="https://www.linkedin.com/in/rizam-t-p-0b1098292" target="_blank">
+                LinkedIn
+            </a>
+        </p>
+
+        <br>
+
+        <p>📍 Dubai, UAE</p>
+
     </div>
+
 </section>
 
 <footer>
-    © 2026 Rizam T P | Aviation & Logistics Portfolio
+    © 2026 Rizam T P | Logistics Portfolio
 </footer>
 
 </body>
